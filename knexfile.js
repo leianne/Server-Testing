@@ -13,4 +13,14 @@ module.exports = {
     },
     usNullAsDefault: true
   },
+  testing: {
+    client: 'sqlite3',
+    connection: {
+      filename: './data/music.db3',
+    },
+    useNullAsDefault: true,
+    migrations: {
+      directory: './data/migrations',
+    },
+  }
 };
