@@ -2,9 +2,12 @@ const express = require('express');
 const logger = require('morgan');
 const cors = require('cors');
 const helmet = require('helmet');
-const compose = require('compose-middleware').compose
-
 const server = express();
-server.use(compose([logger, cors, helmet]));
+const musicRoutes = require('./routes/music');
 
+server.use(cors());
+server.use(helmet());
+server.use(logger());
+server.use(express.json());
+server.use('/api/music', musicRoutes);
 module.exports = server;
