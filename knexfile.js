@@ -1,0 +1,16 @@
+// Update with your config settings.
+
+module.exports = {
+
+  development: {
+    client: 'sqlite3',
+    connection: {
+      filename: './data/music.db3'
+    },
+    migrations: {
+      directory: './data/migrations',
+      tableName: 'dbmigrations'
+    },
+    usNullAsDefault: true
+  },
+};
